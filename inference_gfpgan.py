@@ -8,7 +8,10 @@ from basicsr.utils import imwrite
 
 from gfpgan import GFPGANer
 
-
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
+os.environ['LD_LIBRARY_PATH'] = "$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64" \
+                                ":/usr/local/cuda/include"
+os.environ['CUDA_HOME'] = "/usr/local/cuda"
 def main():
     parser = argparse.ArgumentParser()
 
